@@ -1,0 +1,307 @@
+body{
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+img{
+	max-width: 100%;
+	display: block;
+	} 
+
+.image-full{
+	max-height: 300px;
+	object-fit: cover;
+	width: 100%
+}
+
+					/*Layout!!!!!!*/
+
+
+.container{
+	width: 90%
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.container-flex{
+	display: flex;
+
+	/* in default display: flex will make flex-direction = row
+	but when we specify flex-direction = column then parent become a column while
+	all the children become rows and vice-versa */
+	/* Here to give a default setting we have set flex-direction colum 
+	to make children rows and later for navigation we have applied
+	flex down there to make children column.*/
+
+	/* This setting is done for making it all set for small screen size
+	where we want children to be rows so set parent here to column!!!!*/
+	flex-direction: column;
+	justify-content: space-between;	
+}
+
+header{
+	background-color: #F8F8F8;
+	text-align: center;
+	padding: 2em 0;
+	margin-bottom: 1em;
+}
+
+footer{
+	background:#345480;
+    color: rgba(255,255,255, .65);
+    /* all 255 means white; all 0 means black */
+    /* a = alpha */
+    /* alpha = opacity / transparency */
+	padding: 3em 0;
+}
+
+footer p {
+	text-align: center;
+}
+@media (min-width: 675px) {
+	.container-flex{
+		flex-direction: row;
+	}
+
+	main {
+		width: 70%;
+	}
+
+	aside {
+		width: 25%;
+		min-width: 200px;
+		margin-left: 1em;
+	}
+}
+
+
+
+
+
+					/*Typography!!!!!*/
+
+
+h1,
+h2,
+h3 {
+	font-family: 'lora', serif;
+	font-weight: 400;
+	color: #143774;
+	margin-top: 0;
+}
+
+h1{
+	font-size: 2rem;
+	 margin: 0;
+	
+}
+
+h2{
+	margin-bottom: 10px;
+}
+
+h3 {
+    color: #1792d2;
+}
+
+a {
+    color: #1792d2;
+}
+
+a:hover,
+a:focus {
+    color: #143774;
+}
+
+	/*The logo subtitle!!!!*/
+
+
+.subtitle{
+	color: #1792D2;
+	font-size: .75rem;
+	margin-top: 0px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.article-title{
+	font-size: 1.5rem;
+}
+
+.article-read-more {
+    color: #1792d2;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-read-more,
+.article-info{
+	font-size: .875rem;
+}
+
+.article-read-more:hover,
+.article-read-more:focus 	{
+	color: #143774;
+    text-decoration: underline;
+}
+
+.article-info{
+	margin: 1.5em 0;
+			}	
+
+.widget-title,
+.widget-recent-post-title {
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
+
+ .widget-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.widget-recent-post-title {
+    color: #143774;
+}
+
+				/*Navigation!!!!*/
+
+		/*navigation using compound selector*/
+nav ul{
+	list-style: none;
+	display: flex;
+	/* so here by default flex-direction = row 
+	i.e parent a row while children are all column. */
+	padding: 0px;
+	justify-content: center;
+	font-family: 'Ubuntu';
+
+}
+
+nav li{
+	margin-left: 2em;
+	/*color: #707070;*/
+	/* 1em is nearly 16px */
+}
+
+nav a{
+	color: #707070;
+	text-decoration: none;
+	padding: .25em 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+nav a:hover,
+nav a:focus {
+	color: #1792D2;
+}
+
+/*.home-link{
+	 text-decoration: underline; 
+	border-bottom: 1px solid #707070; 
+}*/
+
+.home-link:hover{
+	color: #707070;
+}
+
+.current-page {
+    border-bottom: 1px solid #707070;
+}
+
+@media (max-width: 675px) {
+	nav ul{
+		flex-direction: column;
+	}
+	nav li{
+		margin: .5em 0;
+	}
+}
+
+
+						/* Articles!!!!!*/
+.article-featured{
+	border-bottom: #707070 solid 1px;
+	padding-bottom: 2em;
+	margin-bottom: 1.5em;
+}
+
+.article-recent{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2em;
+}
+
+.article-recent-main{
+	order: 2;
+	/*margin-bottom: 2em;*/
+}
+
+.article-recent-secondary{
+	order: 1;
+}
+
+@media (min-width: 675px) {
+	.article-recent{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.article-recent-main{
+		width: 70%
+	}
+
+	.article-recent-secondary{
+		width: 25%
+	}
+
+	.article-featured{
+		display: flex;
+		flex-direction: column;
+	}
+	.article-image{
+		order: -2;
+		/*width: 100%*/
+		min-height: 200px;
+		object-fit: cover;
+	}
+	.article-info{
+		order: -1;
+	}
+
+}
+
+
+
+			/* Widgets!!!*/
+
+.sidebar-widget{
+	border: 20px solid #efefef;
+	margin-bottom: 2em;
+	padding: 1em;
+	/*border-width: 2em;*/
+
+}
+
+.widget-recent-post{
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid #707070;
+		margin-bottom: 1em;
+	}
+
+.widget-recent-post:last-child{
+	border: 0;
+	margin: 0;
+}
+
+.widget-image{
+		order: -1;
+	}
