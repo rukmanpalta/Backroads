@@ -1,0 +1,222 @@
+/*  font-family: 'Source Sans Pro', sans-serif;  */
+
+* {
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	/*font-family: 'Source Sans Pro', sans-serif;*/
+	font-size: 1rem;
+	color: #404040;
+	text-align: center;
+}
+
+
+/*===============================
+	Typography 
+	=============================*/
+
+
+h1{
+	font-size: 2.25rem;
+	font-weight: 300;
+	color: #fff;
+	margin: 0;
+}
+
+/* immediate sibling of h1 */
+/* with h1 ~ p all the adjacent siblings after h1 ; with + only immediate
+sibling's properties to be changed!! */
+h1 + p {
+	color: #F18119;
+	font-size: 1.3125rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+/*h1 ~ p {
+	text-transform: uppercase; This doesnt applied as it 
+	will-change: all its siblings
+	letter-spacing: 1px;
+}*/
+
+h2{
+	font-size: 1.3125rem;
+	margin: 0;
+}
+
+h2 + p {
+	color: #F18119;
+	font-weight: 900;
+	font-size: 1rem; 
+	text-transform: uppercase;
+	margin-top: 0px;
+}
+
+.top-text {
+	font-size: 0.625rem;
+	font-weight: 900;
+	color: #F18119;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	order: -1;
+	margin: 0;
+	padding-top: 2px;
+	/*border-top: solid 5px #F18119;*/
+	border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+}
+
+.fine-print {
+	font-size: 0.625rem;
+	letter-spacing: 2px;
+}
+
+.bold {
+ /*font-weight: bolder;*/
+ font-weight: 900;
+}
+
+
+
+
+/*====================================
+		Intro Section
+=======================================*/
+
+.intro{
+background-color: #404040;
+/* Can use linear gradient on a background image too like this--*/
+
+/*background-image : url(img-final.jpg), linear-gradient(90deg, black, green);*/
+background-image: url(images/dark-ribs.jpg);
+/* Can blend background image using background-blend-mode: */
+/*background-blend-mode: screen;*/
+background-position : center;
+padding: 0 .5em 2em;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 50vh;
+}
+
+
+
+
+/*=========================================
+	Main-content section
+===========================================*/
+
+.main-content {
+	padding: 2em 1em;
+}
+
+h2 {
+	margin-bottom: 0px;
+}
+
+/*======================
+	Styling of Forms
+=======================*/
+
+.email-collector {
+	width: 60%;
+	max-width: 200px;
+}
+
+input,
+.btn {
+	width: 100%;
+	border-radius: 3px;
+}
+
+input {
+	margin-bottom: .75em;
+	font-family: inherit;
+	text-align: inherit;
+	padding: .25em;
+	border: 1px solid #404040;
+	/* first a default setting with scale(1) then apply transition to it
+	for 250milliseconds or so and change the scale value to 1.1 on input's
+	focus state. */
+	transform: scale(1); 
+	transition: transform 250ms;
+}
+
+input:focus {
+	transform: scale(1.1);
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	text-transform: uppercase;
+	font-size: 0.625rem;
+	font-weight: 900;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-image: linear-gradient(to left, #ff713b, #ffa51d);
+	color: white;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+	color: black;
+	transform: scale(1.1);
+}
+
+
+/*=================================================
+	solution to getting main-content n intro 
+	getting too bigger on bigger browser or screen
+===================================================*/
+
+
+.intro *,
+.main-content * {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/*============================
+	Media-query 
+==============================*/
+@media (min-width: 600px) {
+	body{
+		font-size: 1.125rem; 
+		display: flex;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h2,
+	h1 + p {
+		font-size: 1.75rem;
+	}
+
+	.intro,
+	.main-content {
+		width: 50%;
+		min-height: 100vh;
+	}
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
